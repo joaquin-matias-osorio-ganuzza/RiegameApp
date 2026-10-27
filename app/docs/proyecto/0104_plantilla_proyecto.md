@@ -65,9 +65,9 @@
 ## 6 · Bocetos
 
 > Los bocetos los haré a mano en papel y los adjuntaré como imágenes en la carpeta `docs/res` del proyecto. Los nombres de los archivos serán:
-> - `boceto_agregar_planta.jpg`:[boceto_agregar_planta.jpg](res/boceto_agregar_planta.jpg)
-> - `boceto_lista_plantas.jpg`: [boceto_lista_plantas.jpg](res/boceto_lista_plantas.jpg)
-> - `boceto_detalle_planta.jpg`: [boceto_detalle_planta.jpg](res/boceto_detalle_planta.jpg)
+> - `boceto_agregar_planta.jpg`:[boceto_agregar_planta.jpg](../res/boceto_agregar_planta.jpg)
+> - `boceto_lista_plantas.jpg`: [boceto_lista_plantas.jpg](../res/boceto_lista_plantas.jpg)
+> - `boceto_detalle_planta.jpg`: [boceto_detalle_planta.jpg](../res/boceto_detalle_planta.jpg)
 
 ---
 

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RiegameApp</string>
+    <!-- Home Screen -->
+    <string name="home_title">Mis plantas</string>
+    <string name="cd_settings">Ajustes</string>
+    <string name="cd_add_plant">Añadir planta</string>
+    <string name="empty_plants_title">Aún no tienes plantas.</string>
+    <string name="empty_plants_subtitle">Pulsa + para añadir la primera.</string>
 </resources>

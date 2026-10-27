@@ -2,6 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permiso para alta frecuencia de muestreo de sensores (Android 12+) -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+
+    <!-- Permiso de cámara (solo si se usa como sensor de luz alternativo) -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+
+    <!-- Declaración de sensores de hardware (todos como opcionales) -->
+    <uses-feature
+        android:name="android.hardware.sensor.light"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.ambient_temperature"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.relative_humidity"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
