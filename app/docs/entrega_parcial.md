@@ -3,15 +3,15 @@
 ### Diseño de alta fidelidad de al menos una página de listado
 
 - **Página de listado:**
-  - [pagina_de_listado_1.png](entrega_parcial_pagina_de_listado_1.png)
-  - [pagina_de_listado_2.png](entrega_parcial_pagina_de_listado_2.png)
+  - [pagina_de_listado_1.png](res/entrega_parcial_pagina_de_listado_1.png)
+  - [pagina_de_listado_2.png](res/entrega_parcial_pagina_de_listado_2.png)
 
 ### Diseño de alta fidelidad de al menos una página de detalle
 
 - **Página de detalle:**
-  - [pagina_detalle_1.png](entrega_parcial_pagina_detalle_1.png)
-  - [pagina_detalle_2.png](entrega_parcial_pagina_detalle_2.png)
-  - [pagina_detalle_3.png](entrega_parcial_pagina_detalle_3.png)
+  - [pagina_detalle_1.png](res/entrega_parcial_pagina_detalle_1.png)
+  - [pagina_detalle_2.png](res/entrega_parcial_pagina_detalle_2.png)
+  - [pagina_detalle_3.png](res/entrega_parcial_pagina_detalle_3.png)
 
 ---
 
@@ -24,7 +24,7 @@ Este elemento estará dentro de un composable (componente) `Scaffold`, al igual 
 
 En su diseño podemos ver una `Column` para el texto **"RiegameApp"** y el título **"Mis plantas"**, y fuera de la `Column` tenemos el `SettingsButton`.
 
-- **Cabecera:** [cabecera.png](entrega_parcial_cabecera.png)
+- **Cabecera:** [cabecera.png](res/entrega_parcial_cabecera.png)
 
 ### Contenido interior del Scaffold
 
@@ -42,7 +42,7 @@ Esta `Card` se compone de la siguiente manera:
 - Una `Column` para los dos textos.
 - Dos `Text` separados por un pequeño `Spacer`.
 
-- **Card de notificación:** [card_de_notificacion.png](entrega_parcial_card_de_notificacion.png)
+- **Card de notificación:** [card_de_notificacion.png](res/entrega_parcial_card_de_notificacion.png)
 
 La siguiente sección que aparece después de la notificación es el contador de plantas, y ubicación de las plantas dentro del hogar.
 
@@ -53,7 +53,7 @@ Este elemento está compuesto por:
 - Un `Spacer` con `weight(1f)` para ocupar el espacio intermedio.
 - Un segundo `Text` para el contador **"4 plantas"**.
 
-- **Contador y texto informativo de ubicación de las plantas:** [ubicacion_y_contador.png](entrega_parcial_ubicacion_y_contador.png)
+- **Contador y texto informativo de ubicación de las plantas:** [ubicacion_y_contador.png](res/entrega_parcial_ubicacion_y_contador.png)
 
 ### Card de plantas
 
@@ -74,7 +74,7 @@ Esta sección se compone de la siguiente forma:
 - Un `Spacer` flexible para empujar el botón hacia la derecha.
 - Un `IconButton` con el icono de gota.
 
-- **Tarjeta de las plantas:** [tarjeta_de_plantas.png](entrega_parcial_tarjeta_de_plantas.png)
+- **Tarjeta de las plantas:** [tarjeta_de_plantas.png](res/entrega_parcial_tarjeta_de_plantas.png)
 
 ### Botón de añadir planta (FAB)
 
@@ -84,4 +84,4 @@ Está compuesto por un `FloatingActionButton` circular que contiene un `Icon` de
 
 Su posición es la esquina inferior derecha y su callback `onClick` comunica al nivel superior que debe abrirse la pantalla de creación de una planta.
 
-- **Botón añadir planta:** [entrega_parcial_boton_agegar_planta.png](entrega_parcial_boton_agegar_planta.png)
+- **Botón añadir planta:** [entrega_parcial_boton_agegar_planta.png](res/entrega_parcial_boton_agegar_planta.png)
