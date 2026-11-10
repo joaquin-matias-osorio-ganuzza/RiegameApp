@@ -11,8 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.miempresa.riegameapp.ui.components.TarjetaPlanta
 import com.miempresa.riegameapp.ui.home.HomeScreen
+import com.miempresa.riegameapp.ui.home.HomeScreenPreviewLleno
 import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RiegameAppTheme {
-                TarjetaPlanta("Monstera","Salon", "24 may", R.drawable.monstera)
+                HomeScreenPreviewLleno()
             }
             }
         }

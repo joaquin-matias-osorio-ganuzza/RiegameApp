@@ -16,6 +16,8 @@ val ColorBotonRegarPlanta =  Color(0xFF445943)
 
 val ColorFondo = Color(0xFFE7F2DC)
 
+val ColorPricipal = Color(0xFFEFF2ED)
+
 val ColorTarjetaYFondoBotones = Color(0xFFF2F2F0)
 
 val ColorTextosSecundarios = Color(0xFF757575)
