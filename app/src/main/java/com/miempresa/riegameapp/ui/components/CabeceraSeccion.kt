@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import org.w3c.dom.Text
+
 
 
 @Composable
@@ -31,16 +31,6 @@ fun CabeceraSeccion(titulo: String, contador: String, modifier : Modifier = Modi
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
