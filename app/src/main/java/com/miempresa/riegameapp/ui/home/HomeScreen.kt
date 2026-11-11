@@ -12,10 +12,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.miempresa.riegameapp.R
+import com.miempresa.riegameapp.ui.components.CabeceraSeccion
+import com.miempresa.riegameapp.ui.components.CabeceraSeccionData
+import com.miempresa.riegameapp.ui.components.TarjetaNotificacion
+import com.miempresa.riegameapp.ui.components.TarjetaNotificacionData
 import com.miempresa.riegameapp.ui.components.TarjetaPlanta
-
+import com.miempresa.riegameapp.ui.components.TarjetaPlantaData
+import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 
 
 @Composable
@@ -25,7 +31,7 @@ fun HomeScreen(
 ){
         if(!hasPlants){
             Column (
-                modifier
+                modifier = modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.Center,
@@ -42,15 +48,26 @@ fun HomeScreen(
             }
         } else {
             LazyColumn(
-                     modifier
+                     modifier = modifier
                     .padding(horizontal = 16.dp),
                 // Quitamos el Arrangement.Center porque la lista debe empezar arriba
             ) {
                 item {
-
+                    TarjetaNotificacion(
+                        data = TarjetaNotificacionData(
+                            titulo = "2 plantas necesitan agua",
+                            subtitulo = "Un pequeño cuidado para hoy"
+                        ),
+                        modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+                    )
                 }
                 item {
-
+                    CabeceraSeccion(
+                        data = CabeceraSeccionData(
+                            titulo = "En casa",
+                                contador = "4 plantas"
+                        )
+                    )
                 }
                 items(3) {  index ->
                     val nombre = when(index) {
@@ -74,8 +91,15 @@ fun HomeScreen(
                         1 -> R.drawable.calathea
                         else -> R.drawable.pilea
                     }
-                    TarjetaPlanta(nombre,lugar,fecha, imagen,modifier = Modifier.padding(bottom = 12.dp))
-                }
+                    TarjetaPlanta(
+                        data = TarjetaPlantaData(
+                            nombre = nombre,
+                            lugar = lugar,
+                            fechaRiego = fecha,
+                            imagen = imagen
+                        ),
+                        modifier = Modifier.padding(bottom = 12.dp)
+                    )                }
             }
           }
          }
@@ -83,16 +107,19 @@ fun HomeScreen(
 
 
 
-/*
-@Preview
+
+@Preview(showBackground = true, name = "Estado Vacío")
 @Composable
 fun HomeScreenPreview(){
-    HomeScreen(hasPlants = false)
+    RiegameAppTheme {
+        HomeScreen(hasPlants = false)
+    }
 }
 
 @Preview(showBackground = true, name = "Con Plantas")
 @Composable
 fun HomeScreenPreviewLleno() {
-    HomeScreen(hasPlants = true)
+    RiegameAppTheme {
+        HomeScreen(hasPlants = true)
+    }
 }
-*/

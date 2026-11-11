@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,7 +29,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.miempresa.riegameapp.R
@@ -36,20 +36,26 @@ import com.miempresa.riegameapp.ui.theme.ColorBotonRegarPlanta
 import com.miempresa.riegameapp.ui.theme.ColorNotificacion
 
 
+
+data class TarjetaPlantaData(
+    val nombre: String,
+    val lugar: String,
+    val fechaRiego: String,
+    @DrawableRes val imagen: Int
+
+)
+
 @Composable
 fun TarjetaPlanta(
-    nombre: String,
-    lugar: String,
-    fechaRiego: String,
-    @DrawableRes imagen: Int,
+    data: TarjetaPlantaData,
     modifier: Modifier = Modifier
 
 ) {
 
     Card(modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
-        border = BorderStroke(0.5.dp, color = Color.LightGray)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary),
+        border = BorderStroke(0.4.dp, color = MaterialTheme.colorScheme.onSurface)
     )
     {
         Row(
@@ -63,8 +69,8 @@ fun TarjetaPlanta(
 
             ) {
                 Image(
-                    painter = painterResource(id = imagen),
-                    contentDescription = "Foto $nombre",
+                    painter = painterResource(id = data.imagen),
+                    contentDescription = "Foto $data.nombre",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
@@ -78,7 +84,7 @@ fun TarjetaPlanta(
 
                 )
                 {
-                    Text(lugar, color = Color.White, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(data.lugar, color = MaterialTheme.colorScheme.onPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
             }
             Spacer(modifier = Modifier.width(16.dp))
@@ -87,14 +93,14 @@ fun TarjetaPlanta(
                  verticalArrangement = Arrangement.spacedBy(8.dp)
                 )
             {
-               Text(nombre, fontWeight = FontWeight.Bold)
+               Text(data.nombre, style = MaterialTheme.typography.titleMedium)
 
                 Row(modifier = Modifier.fillMaxWidth(),
                      verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(stringResource(R.string.regar), color = Color.Gray)
+                    Text(stringResource(R.string.regar), color = MaterialTheme.colorScheme.onSurface)
                     Spacer(modifier = Modifier.padding(3.dp))
-                    Text(fechaRiego, fontWeight = FontWeight.Bold)
+                    Text(data.fechaRiego, style = MaterialTheme.typography.labelMedium)
                     Spacer(modifier = Modifier.weight(1f))
 
                     Box(modifier = Modifier
@@ -106,7 +112,7 @@ fun TarjetaPlanta(
                     ) {
                         Icon(modifier = Modifier.size(15.dp),
                             painter = painterResource(R.drawable.gota_de_agua_llena),
-                            contentDescription = "Gota de agua",
+                            contentDescription = stringResource(id = R.string.gota_de_agua),
                             tint = ColorBotonRegarPlanta)
                     }
                 }
@@ -123,14 +129,16 @@ fun TarjetaPlanta(
 
 
 
-
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun TarjetaPlantaPreview(){
     Box(modifier = Modifier.padding(16.dp)) {
-    TarjetaPlanta("Monstera","Salon", "24 may", R.drawable.monstera)
+        val datosEjemplo = TarjetaPlantaData(
+            nombre = "Monstera",
+            lugar = "Salon",
+            fechaRiego = "24 may",
+            imagen = R.drawable.monstera
+        )
+    TarjetaPlanta(datosEjemplo)
 }
 }

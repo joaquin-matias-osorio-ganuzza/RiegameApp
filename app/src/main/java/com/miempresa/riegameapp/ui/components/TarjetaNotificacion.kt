@@ -64,8 +64,8 @@ fun TarjetaNotificacion(data: TarjetaNotificacionData, modifier: Modifier = Modi
             Spacer(modifier = Modifier.width(16.dp))
 
             Column(modifier = Modifier.weight(1f)) {
-                Text(data.titulo, fontWeight = FontWeight.Bold)
-                Text(data.subtitulo, color = MaterialTheme.colorScheme.onSurface)
+                Text(data.titulo, style = MaterialTheme.typography.titleMedium,)
+                Text(data.subtitulo, style = MaterialTheme.typography.bodyMedium,color = MaterialTheme.colorScheme.onSurface)
             }
 
         }
