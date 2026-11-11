@@ -34,7 +34,7 @@ import com.miempresa.riegameapp.ui.components.CabeceraSeccion
 import com.miempresa.riegameapp.ui.components.TarjetaNotificacion
 import com.miempresa.riegameapp.ui.components.TarjetaPlanta
 import com.miempresa.riegameapp.ui.theme.ColorBotonFABAgregarPlanta
-import com.miempresa.riegameapp.ui.theme.ColorPricipal
+import com.miempresa.riegameapp.ui.theme.ColorPrincipal
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,12 +44,9 @@ fun HomeScreen(
     onAddPlant: () -> Unit = {},
     onOpenSettings: () -> Unit = {}
 ){
-    val monstera = R.drawable.monstera
-    val calathea = R.drawable.calathea
-    val pilea = R.drawable.pilea
 
     Scaffold(
-        containerColor = ColorPricipal,
+        containerColor = ColorPrincipal,
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),

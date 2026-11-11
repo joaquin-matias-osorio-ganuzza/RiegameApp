@@ -15,28 +15,34 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.miempresa.riegameapp.R
-import com.miempresa.riegameapp.ui.theme.ColorBotonRegarPlanta
-import com.miempresa.riegameapp.ui.theme.ColorNotificacion
-import com.miempresa.riegameapp.ui.theme.ColorTarjetaYFondoBotones
+import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
+
+data class TarjetaNotificacionData(
+    val titulo: String,
+    val subtitulo: String
+)
+
+
 
 @Composable
-fun TarjetaNotificacion(titulo: String, subtitulo: String, modifier: Modifier = Modifier){
+fun TarjetaNotificacion(data: TarjetaNotificacionData, modifier: Modifier = Modifier){
 
     Card(modifier = modifier,
-            colors = CardDefaults.cardColors(containerColor = ColorNotificacion),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
             shape = RoundedCornerShape(12.dp),
-            border = BorderStroke(width = 0.3.dp, color = ColorBotonRegarPlanta)
+            border = BorderStroke(width = 0.3.dp, color = MaterialTheme.colorScheme.primary)
     ) {
         Row(modifier = Modifier.fillMaxWidth()
             .padding(16.dp),
@@ -45,21 +51,21 @@ fun TarjetaNotificacion(titulo: String, subtitulo: String, modifier: Modifier = 
            Box(modifier = Modifier
                .size(48.dp)
                .clip(RoundedCornerShape(12.dp))
-               .background(ColorTarjetaYFondoBotones),
+               .background(MaterialTheme.colorScheme.background),
                contentAlignment = Alignment.Center
 
            ) {
                Icon(modifier = Modifier.size(24.dp),
                    painter = painterResource(R.drawable.gota_de_agua_llena),
-                   contentDescription = "Gota de agua",
-                   tint = ColorBotonRegarPlanta)
+                   contentDescription = stringResource(R.string.gota_de_agua),
+                   tint = MaterialTheme.colorScheme.primary)
            }
 
             Spacer(modifier = Modifier.width(16.dp))
 
             Column(modifier = Modifier.weight(1f)) {
-                Text(titulo, fontWeight = FontWeight.Bold)
-                Text(subtitulo, color = Color.Gray)
+                Text(data.titulo, fontWeight = FontWeight.Bold)
+                Text(data.subtitulo, color = MaterialTheme.colorScheme.onSurface)
             }
 
         }
@@ -67,11 +73,18 @@ fun TarjetaNotificacion(titulo: String, subtitulo: String, modifier: Modifier = 
 
 }
 
-
-@Preview(showBackground = true, backgroundColor = 0xFFF7F9F5)
+@Preview(showBackground = true)
 @Composable
 fun TarjetaNotificacionPreview(){
-    Box(modifier = Modifier.padding(16.dp)) {
-        TarjetaNotificacion("2 plantas necesitan agua","Un pequeño cuidado para tus plantas")
+    RiegameAppTheme {
+        Box(modifier = Modifier.padding(16.dp)) {
+
+            val datosEjemplo = TarjetaNotificacionData(
+                titulo = "2 plantas necesitan agua",
+                subtitulo = "Un pequeño cuidado para tus plantas"
+            )
+
+            TarjetaNotificacion(data = datosEjemplo)
+        }
     }
 }

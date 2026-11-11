@@ -29,6 +29,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.miempresa.riegameapp.R
 import com.miempresa.riegameapp.ui.theme.ColorBotonRegarPlanta
@@ -73,11 +74,11 @@ fun TarjetaPlanta(
                         .padding(8.dp)
                         .clip(RoundedCornerShape(8.dp)) //Importante el orden para dar estilo, si movemos clip a otra posicion, no podemos ver el efecto redondeado o de capsula
                         .background(Color.Black.copy(alpha = 0.6f))
-                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp)
 
                 )
                 {
-                    Text(lugar, color = Color.White)
+                    Text(lugar, color = Color.White, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
             }
             Spacer(modifier = Modifier.width(16.dp))
