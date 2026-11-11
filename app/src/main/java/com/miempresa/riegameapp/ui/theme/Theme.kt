@@ -1,6 +1,7 @@
 package com.miempresa.riegameapp.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -36,6 +37,9 @@ private val LightColorScheme = lightColorScheme(
     outline = ColorBorde,
     outlineVariant = ColorGrisClaro
 )
+
+val ColorScheme.colorTransparente: Color
+    get() = Color(0x00000000)
 
 @Composable
 fun RiegameAppTheme(

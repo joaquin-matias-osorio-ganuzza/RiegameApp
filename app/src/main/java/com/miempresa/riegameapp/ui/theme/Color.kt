@@ -8,6 +8,8 @@ val ColorPrincipal = Color(0xFFEFF2ED)
 val ColorBlancoTarjetas = Color(0xFFF2F2F0)
 val ColorBlancoCalido = Color(0xFFF8F9F5)
 
+val ColorTransparente = Color(0x00000000)
+
 // Verdes
 val ColorNotificacion = Color(0xFFE7F2DC)
 val ColorBotonFABAgregarPlanta = Color(0xFFC9D98F)
