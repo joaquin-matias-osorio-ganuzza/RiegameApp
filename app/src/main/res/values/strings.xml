@@ -31,6 +31,8 @@
     <string name="arrow_up">Flecha hacia arriba</string>
     <string name="increment_days">Aumentar días</string>
     <string name="decrement_days">Restar días</string>
+    <string name="photo_camera">Camara de foto</string>
+    <string name="landscape">Paisaje</string>
 
     <!-- Pagina nueva planta -->
     <string name="new_plant">Nueva planta </string>

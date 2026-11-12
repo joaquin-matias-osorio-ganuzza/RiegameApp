@@ -33,9 +33,9 @@ import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 
 
 data class TarjetaDatosBasicosData(
-    var nombre : String,
-    var ubicacion: String,
-    var diasRiego: String
+    val nombre : String,
+    val ubicacion: String,
+    val diasRiego: String
 )
 
 
@@ -100,7 +100,7 @@ fun TarjetaDatosBasicos(
                     modifier = Modifier.fillMaxWidth(),
                     value = data.nombre,
                     shape = RoundedCornerShape(12.dp),
-                    onValueChange = {  data.nombre = it },
+                    onValueChange = { onNombreChange(it)},
                     placeholder = {Text(stringResource(R.string.name))},
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.colorScheme.onSecondary,
@@ -124,7 +124,7 @@ fun TarjetaDatosBasicos(
                     modifier = Modifier.fillMaxWidth(),
                     value = data.ubicacion,
                     shape = RoundedCornerShape(12.dp),
-                    onValueChange = {  data.ubicacion = it },
+                    onValueChange = {  onNombreChange(it) },
                     placeholder = {Text(stringResource(R.string.name))},
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.colorScheme.onSecondary,
