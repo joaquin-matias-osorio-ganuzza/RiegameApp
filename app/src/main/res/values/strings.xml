@@ -6,6 +6,8 @@
     <string name="cd_add_plant">Añadir planta</string>
     <string name="empty_plants_title">Aún no tienes plantas.</string>
     <string name="empty_plants_subtitle">Pulsa + para añadir la primera.</string>
+    <!-- Barra inferior -->
+    <string name="home">Inicio</string>
     <!-- Tarjeta Planta -->
     <string name="regar">Regar: </string>
     <!-- Tarjeta notificacion -->
