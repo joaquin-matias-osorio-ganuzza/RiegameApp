@@ -98,7 +98,7 @@ fun TarjetaPlanta(
                 Row(modifier = Modifier.fillMaxWidth(),
                      verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(stringResource(R.string.regar), color = MaterialTheme.colorScheme.onSurface)
+                    Text(stringResource(R.string.water), color = MaterialTheme.colorScheme.onSurface)
                     Spacer(modifier = Modifier.padding(3.dp))
                     Text(data.fechaRiego, style = MaterialTheme.typography.labelMedium)
                     Spacer(modifier = Modifier.weight(1f))
@@ -112,7 +112,7 @@ fun TarjetaPlanta(
                     ) {
                         Icon(modifier = Modifier.size(15.dp),
                             painter = painterResource(R.drawable.gota_de_agua_llena),
-                            contentDescription = stringResource(id = R.string.gota_de_agua),
+                            contentDescription = stringResource(id = R.string.drop_of_water),
                             tint = ColorBotonRegarPlanta)
                     }
                 }

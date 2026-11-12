@@ -23,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.miempresa.riegameapp.R
@@ -57,7 +56,7 @@ fun TarjetaNotificacion(data: TarjetaNotificacionData, modifier: Modifier = Modi
            ) {
                Icon(modifier = Modifier.size(24.dp),
                    painter = painterResource(R.drawable.gota_de_agua_llena),
-                   contentDescription = stringResource(R.string.gota_de_agua),
+                   contentDescription = stringResource(R.string.drop_of_water),
                    tint = MaterialTheme.colorScheme.primary)
            }
 

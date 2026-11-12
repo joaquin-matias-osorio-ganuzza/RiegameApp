@@ -31,6 +31,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.miempresa.riegameapp.ui.components.TarjetaDatosBasicos
+import com.miempresa.riegameapp.ui.components.TarjetaDatosBasicosData
 import com.miempresa.riegameapp.ui.home.HomeScreen
 import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 import com.miempresa.riegameapp.ui.theme.colorTransparente
@@ -45,7 +47,18 @@ class MainActivity : ComponentActivity() {
 
             RiegameAppTheme {
 
-                var selectedTab by remember { mutableIntStateOf(0) }
+                val datosEjemplo = TarjetaDatosBasicosData(
+                    nombre = "Monstera",
+                    ubicacion = "Salón",
+                    diasRiego = "7"
+                )
+
+                TarjetaDatosBasicos( data = datosEjemplo,
+                    onNombreChange = {},
+                    onUbicacionChange = {},
+                    onDiasChange = {})
+
+              /*  var selectedTab by remember { mutableIntStateOf(0) }
 
                 Scaffold(
                     containerColor = MaterialTheme.colorScheme.background,
@@ -115,7 +128,7 @@ class MainActivity : ComponentActivity() {
                         hasPlants = true
                     )
 
-                }
+                }*/
 
                }
             }

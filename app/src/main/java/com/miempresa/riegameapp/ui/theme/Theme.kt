@@ -36,6 +36,7 @@ private val LightColorScheme = lightColorScheme(
 
     outline = ColorBorde,
     outlineVariant = ColorGrisClaro
+
 )
 
 val ColorScheme.colorTransparente: Color

@@ -9,9 +9,29 @@
     <!-- Barra inferior -->
     <string name="home">Inicio</string>
     <!-- Tarjeta Planta -->
-    <string name="regar">Regar: </string>
+    <string name="water">Regar: </string>
     <!-- Tarjeta notificacion -->
-    <string name="gota_de_agua">Gota de agua </string>
+    <string name="drop_of_water">Gota de agua </string>
+    <!-- Tarjeta datos basicos -->
+    <string name="box_01">01</string>
+    <string name="box_02">02</string>
+    <string name="basic_data">Datos básicos</string>
+    <string name="about_your_plant">Cuétanos un poco sobre tu planta</string>
+    <string name="name">Nombre</string>
+    <string name="location">Ubicación</string>
+    <string name="drop_water_at_regular">Regar cada</string>
+    <string name="days">días</string>
+    <string name="a_photo">Una foto</string>
+    <string name="recognize">Te ayudará a reconocerla rápidamente</string>
+    <string name="add_photo">Añadir foto</string>
+    <string name="use_camera">Use la cámara o elige de tu galería</string>
+    <string name="miniature">Miniatura</string>
+    <string name="will_appear">Aparecerá cuando añadas una foto</string>
+    <string name="save_plant">Guardar planta</string>
+    <string name="arrow_up">Flecha hacia arriba</string>
+    <string name="increment_days">Aumentar días</string>
+    <string name="decrement_days">Restar días</string>
+
     <!-- Pagina nueva planta -->
-    <string name="nueva_planta">Nueva planta </string>
+    <string name="new_plant">Nueva planta </string>
 </resources>
