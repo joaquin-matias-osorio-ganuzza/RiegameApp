@@ -33,6 +33,7 @@
     <string name="decrement_days">Restar días</string>
     <string name="photo_camera">Camara de foto</string>
     <string name="landscape">Paisaje</string>
+    <string name="arrow_right">Flecha a la derecha</string>
 
     <!-- Pagina nueva planta -->
     <string name="new_plant">Nueva planta </string>
