@@ -37,4 +37,20 @@
 
     <!-- Pagina nueva planta -->
     <string name="new_plant">Nueva planta </string>
+
+    <!-- Pagina detalle -->
+    <string name="arrow_left">Flecha izquierda</string>
+    <string name="healthy">Saludable</string>
+    <string name="your_plant">Tu planta</string>
+    <string name="check_water">Marcar como regada</string>
+    <string name="ambient_light">Luz ambiental</string>
+    <string name="measure_light">Medir luz</string>
+    <string name="recent_care">Cuidados recientes</string>
+    <string name="irregation_history">Historial de riegos</string>
+    <string name="last_30_days">Últimos 30 días</string>
+    <string name="cloud">Nube</string>
+    <string name="sol">Sol</string>
+    <string name="title_edit_your_plant">Edita tu planta</string>
+    <string name="edit">Lapiz</string>
+
 </resources>
