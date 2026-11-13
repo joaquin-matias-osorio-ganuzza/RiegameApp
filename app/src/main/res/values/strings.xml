@@ -52,5 +52,7 @@
     <string name="sol">Sol</string>
     <string name="title_edit_your_plant">Edita tu planta</string>
     <string name="edit">Lapiz</string>
+    <string name="image_plant">Imagen de planta</string>
+
 
 </resources>
