@@ -41,7 +41,7 @@
     <!-- Pagina detalle -->
     <string name="arrow_left">Flecha izquierda</string>
     <string name="healthy">Saludable</string>
-    <string name="your_plant">Tu planta</string>
+    <string name="your_plant">TU PLANTA</string>
     <string name="check_water">Marcar como regada</string>
     <string name="ambient_light">Luz ambiental</string>
     <string name="measure_light">Medir luz</string>
