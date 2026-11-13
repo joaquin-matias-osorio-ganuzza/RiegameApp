@@ -86,105 +86,105 @@ fun TarjetaFoto(
 
 
             }
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(160.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(colorFondo) // Usamos la variable
+                    .clickable { onAddPhotoClick() }
+                    .drawBehind {
+                        drawRoundRect(
+                            color = colorBorde,
+                            style = Stroke(
+                                width = 2.dp.toPx(),
+                                pathEffect = PathEffect.dashPathEffect(floatArrayOf(20f, 20f), 0f)
+                            ),
+                            cornerRadius = CornerRadius(16.dp.toPx())
+                        )
+                    },
+                contentAlignment = Alignment.Center
 
-        }
+            )
+            {
+                Column(
+                    modifier = Modifier,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(160.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .background(colorFondo) // Usamos la variable
-                .clickable { onAddPhotoClick() }
-                .drawBehind {
-                    drawRoundRect(
-                        color = colorBorde,
-                        style = Stroke(
-                            width = 2.dp.toPx(),
-                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(20f, 20f), 0f)
-                        ),
-                        cornerRadius = CornerRadius(16.dp.toPx())
+                    Box(
+                        modifier = Modifier
+                            .size(64.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.onPrimary),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.camara_de_foto),
+                            contentDescription = stringResource(R.string.photo_camera),
+                            modifier = Modifier.size(28.dp),
+                            tint = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(
+                        text = stringResource(R.string.add_photo),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
-                },
-            contentAlignment = Alignment.Center
 
-        )
-        {
-            Column(
-                modifier = Modifier,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
+                    Spacer(modifier = Modifier.height(8.dp))
 
+                    Text(
+                        text = stringResource(R.string.use_camera),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
+
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Row(modifier = Modifier.fillMaxWidth()
+                .clip(RoundedCornerShape(12.dp))
+                .background(MaterialTheme.colorScheme.onPrimary),
+                verticalAlignment = Alignment.CenterVertically
+
+            )
+            {
                 Box(
                     modifier = Modifier
-                        .size(64.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(MaterialTheme.colorScheme.onPrimary),
+                        .size(50.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(MaterialTheme.colorScheme.primaryContainer),
                     contentAlignment = Alignment.Center
-                ) {
+
+                )
+                {
                     Icon(
-                        painter = painterResource(R.drawable.camara_de_foto),
-                        contentDescription = stringResource(R.string.photo_camera),
+                        painter = painterResource(R.drawable.paisaje),
+                        contentDescription = stringResource(R.string.landscape),
                         modifier = Modifier.size(28.dp),
                         tint = MaterialTheme.colorScheme.onSurface
                     )
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.width(15.dp))
 
-                Text(
-                    text = stringResource(R.string.add_photo),
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onBackground
-                )
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                Text(
-                    text = stringResource(R.string.use_camera),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
+                Column() {
+                    Text(stringResource(R.string.miniature), style = MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.will_appear), style = MaterialTheme.typography.bodyMedium)
+                }
             }
 
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Row(modifier = Modifier.fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(MaterialTheme.colorScheme.onPrimary),
-            verticalAlignment = Alignment.CenterVertically
-
-        )
-        {
-             Box(
-                 modifier = Modifier
-                     .size(50.dp)
-                     .clip(RoundedCornerShape(12.dp))
-                     .background(MaterialTheme.colorScheme.primaryContainer),
-                 contentAlignment = Alignment.Center
-
-             )
-             {
-                 Icon(
-                     painter = painterResource(R.drawable.paisaje),
-                     contentDescription = stringResource(R.string.landscape),
-                     modifier = Modifier.size(28.dp),
-                     tint = MaterialTheme.colorScheme.onSurface
-                 )
-             }
-
-            Spacer(modifier = Modifier.width(15.dp))
-
-            Column() {
-                Text(stringResource(R.string.miniature), style = MaterialTheme.typography.titleMedium)
-                Text(stringResource(R.string.will_appear), style = MaterialTheme.typography.bodyMedium)
-            }
         }
 
-    }
 
 }
 

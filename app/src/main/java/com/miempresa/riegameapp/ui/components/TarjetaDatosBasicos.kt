@@ -101,7 +101,7 @@ fun TarjetaDatosBasicos(
                     value = data.nombre,
                     shape = RoundedCornerShape(12.dp),
                     onValueChange = { onNombreChange(it)},
-                    placeholder = {Text(stringResource(R.string.name))},
+                   // placeholder = {Text(stringResource(R.string.name))},
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.colorScheme.onSecondary,
                         unfocusedTextColor = MaterialTheme.colorScheme.onSecondary,
@@ -125,7 +125,7 @@ fun TarjetaDatosBasicos(
                     value = data.ubicacion,
                     shape = RoundedCornerShape(12.dp),
                     onValueChange = {  onNombreChange(it) },
-                    placeholder = {Text(stringResource(R.string.name))},
+                   // placeholder = {Text(stringResource(R.string.location))},
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.colorScheme.onSecondary,
                         unfocusedTextColor = MaterialTheme.colorScheme.onSecondary,
