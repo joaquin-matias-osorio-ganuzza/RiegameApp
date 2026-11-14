@@ -29,7 +29,6 @@ import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 
 
 data class BotonRiegoData(
-    val textoPrincipal: String,
     val textoEstado: String
 )
 
@@ -59,7 +58,7 @@ fun BotonRiego(
                 )
             Spacer(modifier = Modifier.width(10.dp))
 
-            Text(data.textoPrincipal, style = MaterialTheme.typography.bodyLarge)
+            Text(stringResource(R.string.check_water), style = MaterialTheme.typography.bodyLarge)
 
             Spacer(modifier = Modifier.weight(1f)) //Empuja el siguiente elemento hacia la esquina
 
@@ -92,7 +91,6 @@ fun BotonRiegoPreview() {
     RiegameAppTheme() {
 
         val datos = BotonRiegoData(
-            textoPrincipal = "Marcar como regada",
             textoEstado = "Hoy"
         )
         Box(modifier = Modifier.padding(16.dp)) {
