@@ -27,7 +27,8 @@ import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    hasPlants: Boolean = true
+    hasPlants: Boolean = true,
+    onPlantClick: (String) -> Unit = {}
 ){
         if(!hasPlants){
             Column (
@@ -98,8 +99,10 @@ fun HomeScreen(
                             fechaRiego = fecha,
                             imagen = imagen
                         ),
+                        onClick = { onPlantClick(nombre) },
                         modifier = Modifier.padding(bottom = 12.dp)
-                    )                }
+                    )
+                }
             }
           }
          }

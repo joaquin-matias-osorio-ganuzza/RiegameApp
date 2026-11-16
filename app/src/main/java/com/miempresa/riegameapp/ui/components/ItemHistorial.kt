@@ -90,7 +90,7 @@ fun ItemHistorialPreview() {
     RiegameAppTheme() {
         Box(modifier = Modifier.padding(16.dp)) {
 
-            val datos = ItemHistorialData(
+           val datos = ItemHistorialData(
                 fechaRiego = "12 de sep",
                 ultimoRiego = "Hace 7 días",
                 cantidadAgua = "90 ml"

@@ -6,6 +6,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -48,11 +49,13 @@ data class TarjetaPlantaData(
 @Composable
 fun TarjetaPlanta(
     data: TarjetaPlantaData,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 
 ) {
 
-    Card(modifier.fillMaxWidth(),
+    Card(modifier.fillMaxWidth()
+        .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary),
         border = BorderStroke(0.4.dp, color = MaterialTheme.colorScheme.onSurface)
@@ -139,6 +142,6 @@ fun TarjetaPlantaPreview(){
             fechaRiego = "24 may",
             imagen = R.drawable.monstera
         )
-    TarjetaPlanta(datosEjemplo)
+    TarjetaPlanta(datosEjemplo, {})
 }
 }

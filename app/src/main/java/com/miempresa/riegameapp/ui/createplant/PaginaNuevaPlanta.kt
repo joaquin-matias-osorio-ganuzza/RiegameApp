@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.R
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -31,7 +30,8 @@ import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 
 @Composable
 fun PaginaNuevaPlanta(
-  modifier: Modifier = Modifier
+  modifier: Modifier = Modifier,
+  onBackClick: () -> Unit = {}
 )
 {
 
