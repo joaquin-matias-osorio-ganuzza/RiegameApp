@@ -4,11 +4,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -50,11 +52,19 @@ fun CabeceraDetalle(
                contentAlignment = Alignment.Center
            )
            {
-               Icon(
-                   painter = painterResource(R.drawable.flecha_volver_atras),
-                   contentDescription = stringResource(R.string.arrow_left),
-                   tint = MaterialTheme.colorScheme.onSurface
-               )
+
+               IconButton(
+                   onClick = onBackClick,
+                   modifier = Modifier.fillMaxSize()
+               ) {
+                   Icon(
+                       painter = painterResource(R.drawable.flecha_volver_atras),
+                       contentDescription = stringResource(R.string.arrow_left),
+                       tint = MaterialTheme.colorScheme.onSurface
+                   )
+               }
+
+
            }
         Text(stringResource(R.string.title_edit_your_plant),style = MaterialTheme.typography.titleLarge,fontWeight = FontWeight.Bold)
 
