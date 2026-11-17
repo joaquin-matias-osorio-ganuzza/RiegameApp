@@ -11,12 +11,15 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonColors
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -55,7 +58,10 @@ fun CabeceraDetalle(
 
                IconButton(
                    onClick = onBackClick,
-                   modifier = Modifier.fillMaxSize()
+                   modifier = Modifier.fillMaxSize(),
+                   shape = RoundedCornerShape(12.dp),
+                   colors = IconButtonDefaults.iconButtonColors(containerColor = MaterialTheme.colorScheme.onPrimary)
+
                ) {
                    Icon(
                        painter = painterResource(R.drawable.flecha_volver_atras),
@@ -77,7 +83,7 @@ fun CabeceraDetalle(
         ) {
             Icon(
                 painter = painterResource(R.drawable.lapiz),
-                contentDescription = stringResource(R.string.arrow_left),
+                contentDescription = stringResource(R.string.edit),
                 tint = MaterialTheme.colorScheme.onSurface
             )
         }

@@ -28,89 +28,133 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavDestination.Companion.hasRoute
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.miempresa.riegameapp.R
 import com.miempresa.riegameapp.ui.navigation.AppNavGraph
+import com.miempresa.riegameapp.ui.navigation.DetallePlanta
+import com.miempresa.riegameapp.ui.navigation.Home
+import com.miempresa.riegameapp.ui.navigation.NuevaPlanta
 import com.miempresa.riegameapp.ui.theme.colorTransparente
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppRoot() {
-
-
     val navController = rememberNavController()
-
     var selectedTab by remember { mutableIntStateOf(0) }
+
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = backStackEntry?.destination
+
+    val isHome = currentDestination?.hasRoute<Home>() == true
+    val isNuevaPlanta = currentDestination?.hasRoute<NuevaPlanta>() == true
+    val isDetalle = currentDestination?.hasRoute<DetallePlanta>() == true
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.colorTransparente),
-                title = {
-                    Column() {
-                        Text(stringResource(R.string.app_name), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.labelMedium)
-                        Text(stringResource(R.string.home_title), style = MaterialTheme.typography.displaySmall)
-                    }
-                },
-                actions = {
-                    Box(modifier = Modifier.size(40.dp).clip(CircleShape).background(
-                        MaterialTheme.colorScheme.onPrimary)) {
-                        IconButton(onClick ={}) { //Ajustar
-                            Icon(
-                                painter = painterResource(id = R.drawable.outline_settings_24),
-                                contentDescription = stringResource(R.string.cd_settings),
-                                tint = MaterialTheme.colorScheme.onSurface
-
-                            )
+            // Mostramos la TopAppBar si estamos en Home o en NuevaPlanta.
+            // La ocultamos si estamos en Detalle, porque su componente ya la tiene.
+            if (!isDetalle) {
+                TopAppBar(
+                    colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.colorTransparente),
+                    title = {
+                        if (isHome) {
+                            // Título de Home
+                            Column {
+                                Text(stringResource(R.string.app_name), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.labelMedium)
+                                Text(stringResource(R.string.home_title), style = MaterialTheme.typography.displaySmall)
+                            }
+                        } else if (isNuevaPlanta) {
+                            // Título de Nueva Planta
+                            Column {
+                                Text(stringResource(R.string.app_name), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.labelMedium)
+                                Text(stringResource(R.string.new_plant), style = MaterialTheme.typography.displaySmall) // O "Nueva planta" directo
+                            }
+                        }
+                    },
+                    navigationIcon = {
+                        // Flecha para volver atrás en NuevaPlanta
+                        if (isNuevaPlanta) {
+                            IconButton(onClick = { navController.navigateUp() }) {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.flecha_volver_atras),
+                                    contentDescription = "Volver",
+                                    tint = MaterialTheme.colorScheme.onSurface
+                                )
+                            }
+                        }
+                    },
+                    actions = {
+                        // Engranaje de ajustes solo en Home
+                        if (isHome) {
+                            Box(
+                                modifier = Modifier
+                                    .size(40.dp)
+                                    .clip(CircleShape)
+                                    .background(MaterialTheme.colorScheme.onPrimary)
+                            ) {
+                                IconButton(onClick = { /* Ajustes */ }) {
+                                    Icon(
+                                        painter = painterResource(id = R.drawable.outline_settings_24),
+                                        contentDescription = stringResource(R.string.cd_settings),
+                                        tint = MaterialTheme.colorScheme.onSurface
+                                    )
+                                }
+                            }
                         }
                     }
-
-                }
-
-            )
-
+                )
+            }
         },
         floatingActionButton = {
-            FloatingActionButton(containerColor = MaterialTheme.colorScheme.secondary, onClick = {}, shape = CircleShape) {
-                Icon(
-                    painter = painterResource(id = R.drawable.outline_add_24),
-                    contentDescription = stringResource(R.string.cd_add_plant)
-                )
+            // El FAB solo se muestra en Home
+            if (isHome) {
+                FloatingActionButton(
+                    containerColor = MaterialTheme.colorScheme.secondary,
+                    onClick = {
+                        navController.navigate(NuevaPlanta) {
+                            launchSingleTop = true
+                        }
+                    },
+                    shape = CircleShape
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.outline_add_24),
+                        contentDescription = stringResource(R.string.cd_add_plant)
+                    )
+                }
             }
         },
         bottomBar = {
-            NavigationBar(
-                containerColor = MaterialTheme.colorScheme.surface
-            ) {
-                NavigationBarItem(
-                    selected = (selectedTab == 0),
-                    onClick = { selectedTab = 0 },
-                    colors = NavigationBarItemDefaults.colors(
-                        indicatorColor = MaterialTheme.colorScheme.surface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary,
-                    ),
-                    icon = {
-                        Icon(painter = painterResource(id = R.drawable.home),
-                            contentDescription = stringResource(R.string.home),
-                            tint = MaterialTheme.colorScheme.onSurface)
-                    }
-
-                )
+            // El BottomBar solo se muestra en Home
+            if (isHome) {
+                NavigationBar(
+                    containerColor = MaterialTheme.colorScheme.surface
+                ) {
+                    NavigationBarItem(
+                        selected = (selectedTab == 0),
+                        onClick = { selectedTab = 0 },
+                        colors = NavigationBarItemDefaults.colors(
+                            indicatorColor = MaterialTheme.colorScheme.surface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary,
+                        ),
+                        icon = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.home),
+                                contentDescription = stringResource(R.string.home),
+                                tint = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    )
+                }
             }
-
         }
-    )
-    {
-        innerPadding ->
+    ) { innerPadding ->
         AppNavGraph(
             navController = navController,
             modifier = Modifier.padding(innerPadding)
         )
-
     }
-
-
-
 }

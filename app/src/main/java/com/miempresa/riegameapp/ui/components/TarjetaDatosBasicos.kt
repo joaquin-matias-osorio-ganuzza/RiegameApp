@@ -124,7 +124,7 @@ fun TarjetaDatosBasicos(
                     modifier = Modifier.fillMaxWidth(),
                     value = data.ubicacion,
                     shape = RoundedCornerShape(12.dp),
-                    onValueChange = {  onNombreChange(it) },
+                    onValueChange = {  onUbicacionChange(it) },
                    // placeholder = {Text(stringResource(R.string.location))},
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.colorScheme.onSecondary,

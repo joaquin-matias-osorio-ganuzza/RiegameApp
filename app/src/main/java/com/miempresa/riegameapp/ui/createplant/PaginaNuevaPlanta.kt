@@ -11,14 +11,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.miempresa.riegameapp.ui.components.BotonGuardarData
 import com.miempresa.riegameapp.ui.components.BotonGuardarPlanta
 import com.miempresa.riegameapp.ui.components.TarjetaDatosBasicos
@@ -31,16 +29,11 @@ import com.miempresa.riegameapp.ui.theme.RiegameAppTheme
 @Composable
 fun PaginaNuevaPlanta(
   modifier: Modifier = Modifier,
-  onBackClick: () -> Unit = {}
+  onBackClick: () -> Unit = {},
+  viewModel: NuevaPlantaViewModel = viewModel()
 )
 {
-
-    var datosBasicos by remember {
-        mutableStateOf(TarjetaDatosBasicosData(nombre = "", ubicacion = "", diasRiego = "7"))
-    }
-    var datosFoto by remember {
-        mutableStateOf(TarjetaFotoData(tieneFoto = false))
-    }
+    val uiState by viewModel.uiState.collectAsState()
 
        Column(
            modifier = Modifier
@@ -50,34 +43,28 @@ fun PaginaNuevaPlanta(
            verticalArrangement = Arrangement.spacedBy(16.dp)
        ) {
            TarjetaDatosBasicos(
-               data = datosBasicos,
-
-               onNombreChange = { nuevoNombre ->
-                   datosBasicos = datosBasicos.copy(nombre = nuevoNombre)
-               },
-               onUbicacionChange = { nuevaUbicacion ->
-                   datosBasicos = datosBasicos.copy(ubicacion = nuevaUbicacion)
-               },
-               onDiasChange = { nuevosDias ->
-                   datosBasicos = datosBasicos.copy(diasRiego = nuevosDias)
-               }
+               data = TarjetaDatosBasicosData(
+                   nombre = uiState.nombre,
+                   ubicacion = uiState.ubicacion,
+                   diasRiego = uiState.diasRiego
+               ),
+               onNombreChange = viewModel::onNombreChange,
+               onUbicacionChange = viewModel::onUbicacionChange,
+               onDiasChange = viewModel::onDiasChange
            )
-
            TarjetaFoto(
-               data = datosFoto,
-               onAddPhotoClick = {
-                   datosFoto = datosFoto.copy(tieneFoto = true)
-               }
+               data = TarjetaFotoData(tieneFoto = uiState.tieneFoto),
+               onAddPhotoClick = viewModel::onAddPhotoClick
            )
 
            BotonGuardarPlanta(
-               data = BotonGuardarData(texto = stringResource(com.miempresa.riegameapp.R.string.save_plant)),
-               onClick = {}
+               data = BotonGuardarData(texto = "Guardar planta"),
+               onClick = {
+                   viewModel.onGuardarClick()
+                   onBackClick()
+               }
            )
-
            Box(modifier = Modifier.height(24.dp))
-
-
        }
    }
 
