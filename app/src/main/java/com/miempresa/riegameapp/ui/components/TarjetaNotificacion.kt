@@ -41,7 +41,7 @@ fun TarjetaNotificacion(data: TarjetaNotificacionData, modifier: Modifier = Modi
     Card(modifier = modifier,
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
             shape = RoundedCornerShape(12.dp),
-            border = BorderStroke(width = 0.3.dp, color = MaterialTheme.colorScheme.primary)
+
     ) {
         Row(modifier = Modifier.fillMaxWidth()
             .padding(16.dp),

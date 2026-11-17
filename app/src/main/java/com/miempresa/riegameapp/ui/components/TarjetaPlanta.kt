@@ -58,7 +58,7 @@ fun TarjetaPlanta(
         .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary),
-        border = BorderStroke(0.4.dp, color = MaterialTheme.colorScheme.onSurface)
+
     )
     {
         Row(
