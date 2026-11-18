@@ -1,7 +1,6 @@
 package com.miempresa.riegameapp.ui.components
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -66,9 +65,9 @@ fun MenuLateralPreview(){
     RiegameAppTheme() {
 
         val opcionesEjemplo = listOf(
-            MenuLateralData("Inicio", R.drawable.home, "home"),
-            MenuLateralData("Nueva Planta", R.drawable.outline_add_24, "nueva"),
-            MenuLateralData("Ajustes", R.drawable.outline_settings_24, "ajustes")
+            MenuLateralData(stringResource(R.string.home_menu), R.drawable.home, "home"),
+            MenuLateralData(stringResource(R.string.new_plant), R.drawable.outline_add_24, "nueva"),
+            MenuLateralData(stringResource(R.string.cd_settings), R.drawable.outline_settings_24, "ajustes")
         )
 
         MenuLateral(
