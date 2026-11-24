@@ -1,4 +1,4 @@
-package com.miempresa.riegameapp.ui.createplant
+package com.miempresa.riegameapp.ui.pages.createplant
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

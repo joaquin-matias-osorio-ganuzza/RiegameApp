@@ -1,4 +1,4 @@
-package com.miempresa.riegameapp.ui.home
+package com.miempresa.riegameapp.ui.pages.home
 
 import com.miempresa.riegameapp.ui.components.TarjetaPlantaData
 

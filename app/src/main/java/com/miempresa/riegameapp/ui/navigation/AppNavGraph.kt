@@ -6,9 +6,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.miempresa.riegameapp.ui.createplant.PaginaNuevaPlanta
-import com.miempresa.riegameapp.ui.detail.PaginaDetallePlanta
-import com.miempresa.riegameapp.ui.home.HomeRoute
+import com.miempresa.riegameapp.ui.pages.createplant.PaginaNuevaPlanta
+import com.miempresa.riegameapp.ui.pages.detail.PaginaDetallePlanta
+import com.miempresa.riegameapp.ui.pages.home.HomeRoute
 
 
 

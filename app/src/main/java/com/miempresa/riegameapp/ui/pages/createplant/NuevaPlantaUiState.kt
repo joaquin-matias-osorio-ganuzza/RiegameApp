@@ -1,4 +1,4 @@
-package com.miempresa.riegameapp.ui.createplant
+package com.miempresa.riegameapp.ui.pages.createplant
 
 
 data class NuevaPlantaUiState (

@@ -1,4 +1,4 @@
-package com.miempresa.riegameapp.ui.detail
+package com.miempresa.riegameapp.ui.pages.detail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.miempresa.riegameapp.ui.home
+package com.miempresa.riegameapp.ui.pages.home
 
 import androidx.lifecycle.ViewModel
 import com.miempresa.riegameapp.R
