@@ -8,7 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.miempresa.riegameapp.ui.createplant.PaginaNuevaPlanta
 import com.miempresa.riegameapp.ui.detail.PaginaDetallePlanta
-import com.miempresa.riegameapp.ui.home.HomeScreen
+import com.miempresa.riegameapp.ui.home.HomeRoute
+
 
 
 @Composable
@@ -22,10 +23,8 @@ fun AppNavGraph(
         modifier = modifier
     ) {
         composable<Home> {
-            HomeScreen(
-                onPlantClick = { nombrePlanta ->
-                    navController.navigate(DetallePlanta(nombrePlanta))
-                }
+            HomeRoute(
+                onPlantClick = { nombre -> navController.navigate(DetallePlanta(nombre)) }
             )
         }
         composable<DetallePlanta> { backStackEntry ->
